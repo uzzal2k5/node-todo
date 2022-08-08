@@ -4,11 +4,11 @@ orbs:
 version: 2.1
 executors:
   docker-publisher:
-  docker:
-  - image: circleci/node:latest
-    auth:
-      username: uzzal2k5
-      password: shafiq2k5
+    docker:
+      - image: circleci/node:latest
+        auth:
+          username: uzzal2k5
+          password: shafiq2k5
  
 jobs:
   publishLatestToHub: 
