@@ -19,7 +19,7 @@ jobs:
       - run: 
           name: Publish Docker Image to Docker Hub
           command: |
-            echo "shafiq2k5" | docker login -u uzzal2k5 — password-stdin
+            echo "shafiq2k5" | docker login -u uzzal2k5 --password-stdin
             docker build -t uzzal2k5/node_todo_app .
             docker push uzzal2k5/node_todo_app:latest
 
