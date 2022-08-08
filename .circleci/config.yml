@@ -5,24 +5,24 @@ executors:
  docker-publisher: 
  environment:
  IMAGE_NAME: uzzal2k5/node-todo-app
- — image: circleci/node:latest
+ - image: circleci/node:latest
  auth:
  username: $DOCKERHUB_USERNAME
  password: $DOCKERHUB_PASSWORD
  
 jobs:
- publishLatestToHub: 
- executor: docker-publisher
+  publishLatestToHub: 
+  executor: docker-publisher
  
- steps: 
-   — checkout
-   — setup_remote_docker
-   — run: 
-       name: Publish Docker Image to Docker Hub
-       command: |
-       echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" — password-stdin
-       docker build -t $IMAGE_NAME .
-       docker push $IMAGE_NAME:latest
+  steps: 
+    — checkout
+    — setup_remote_docker
+    - run: 
+        name: Publish Docker Image to Docker Hub
+        command: |
+          echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" — password-stdin
+          docker build -t $IMAGE_NAME .
+          docker push $IMAGE_NAME:latest
 
 workflows:
  version: 2
