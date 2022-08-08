@@ -9,22 +9,22 @@ executors:
   docker:
   - image: circleci/node:latest
   auth:
-     username: $DOCKERHUB_USERNAME
-     password: $DOCKERHUB_PASSWORD
+     username: uzzal2k5
+     password: shafiq2k5
  
 jobs:
   publishLatestToHub: 
   executor: docker-publisher
  
   steps: 
-    - checkout
-    - setup_remote_docker
-    - run: 
-    name: Publish Docker Image to Docker Hub
-    command: |
-     echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" — password-stdin
-     docker build -t $IMAGE_NAME .
-     docker push $IMAGE_NAME:latest
+  - checkout
+  - setup_remote_docker
+  - run: 
+  name: Publish Docker Image to Docker Hub
+  command: |
+   echo shafiq2k5 | docker login -u uzzal2k5 — password-stdin
+   docker build -t $IMAGE_NAME .
+   docker push $IMAGE_NAME:latest
 
 workflows:
  version: 2
