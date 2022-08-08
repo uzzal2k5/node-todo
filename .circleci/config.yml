@@ -24,8 +24,9 @@ jobs:
           docker build -t uzzal2k5/node_todo_app .
           docker push uzzal2k5/node_todo_app:latest
 
+
 workflows:
- version: 2
- build-master:
- jobs:
-   — publishLatestToHub
+  version: 2
+  build-master:
+    jobs:
+      - publishLatestToHub
