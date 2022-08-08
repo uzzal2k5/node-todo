@@ -6,9 +6,9 @@ executors:
   docker-publisher:
   docker:
   - image: circleci/node:latest
-  auth:
-    username: uzzal2k5
-    password: shafiq2k5
+    auth:
+      username: uzzal2k5
+      password: shafiq2k5
  
 jobs:
   publishLatestToHub: 
