@@ -6,6 +6,7 @@ executors:
   docker-publisher: 
   environment:
   IMAGE_NAME: uzzal2k5/node-todo-app
+  docker:
   - image: circleci/node:latest
   auth:
      username: $DOCKERHUB_USERNAME
