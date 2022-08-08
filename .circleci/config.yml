@@ -3,28 +3,28 @@ orbs:
  
 version: 2.1
 executors:
-  docker-publisher: 
+  docker-publisher:
   environment:
-  IMAGE_NAME: "uzzal2k5/node_todo_app"
+  IMAGE_NAME: uzzal2k5/node_todo_app
   docker:
   - image: circleci/node:latest
   auth:
-     username: uzzal2k5
-     password: shafiq2k5
+    username: uzzal2k5
+    password: shafiq2k5
  
 jobs:
   publishLatestToHub: 
   executor: docker-publisher
  
   steps: 
-  - checkout
-  - setup_remote_docker
-  - run: 
-  name: Publish Docker Image to Docker Hub
-  command: |
-   echo shafiq2k5 | docker login -u uzzal2k5 — password-stdin
-   docker build -t $IMAGE_NAME .
-   docker push $IMAGE_NAME:latest
+    - checkout
+    - setup_remote_docker
+    - run: 
+        name: Publish Docker Image to Docker Hub
+        command: |
+          echo shafiq2k5 | docker login -u uzzal2k5 — password-stdin
+          docker build -t $IMAGE_NAME .
+          docker push $IMAGE_NAME:latest
 
 workflows:
  version: 2
