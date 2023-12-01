@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:21.2-alpine3.18
 MAINTAINER uzzal, uzzal2k5@gmail.com
 WORKDIR /node-todo
 COPY . .
